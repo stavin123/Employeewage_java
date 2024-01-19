@@ -6,7 +6,7 @@ public class Main {
         int wageperhr=20;
         int monthlywage=0;
 
-        int day,noofday=20;
+        int noofday=20;
         for (int day = 0; day < noofday ; day++) {
             int empCheck =(int) Math.floor(Math.random() * 10) % 3;
 
