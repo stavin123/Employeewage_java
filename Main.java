@@ -5,9 +5,13 @@ public class Main {
         int emphr=0,empwage=0;
         int wageperhr=20;
         int monthlywage=0;
+        int totalEmpHrs = 0;
+        int hrsinmonth=10;
+        int noofday=20, totalWorkingDays = 0;
 
-        int noofday=20;
-        for (int day = 0; day < noofday ; day++) {
+        while (totalEmpHrs <= hrsinmonth && totalWorkingDays < noofday){ ;
+
+                totalWorkingDays++;
             int empCheck =(int) Math.floor(Math.random() * 10) % 3;
 
             switch (empCheck) {
@@ -21,9 +25,11 @@ public class Main {
                     System.out.println("Employee is Absent");
                     emphr = 0;
             }
-            empwage=emphr*wageperhr;
-            monthlywage=monthlywage+empwage;
+            totalEmpHrs=totalWorkingDays+emphr;
+
         }
+        int totalwage=totalEmpHrs*wageperhr;
+        //monthlywage=monthlywage+empwage;
         /*if (empCheck == FULL_TIME)
             System.out.println("Employee is Present");
         else if (empCheck == Part_TIME)
@@ -31,6 +37,6 @@ public class Main {
                 */
 
 
-        System.out.println("Emplyee wage for month ="+monthlywage);
+        System.out.println("Emplyee wage="+totalwage);
     }
 }
