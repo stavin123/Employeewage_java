@@ -1,13 +1,8 @@
 
 
 public class EmployeeWage {
-    int FULL_TIME = 2;
-    int Part_TIME = 1;
-    int emphr=0,empwage=0;
-    int wageperhr=20;
-    int monthlywage=0;
 
-    public void calculateEmployeeWage(){
+    public void calculateEmployeeWage(int wkhr, int hrlyWage){
         int totalEmpHrs = 0;
         int hrsinmonth=10;
         int noofday=20, totalWorkingDays = 0;
@@ -18,19 +13,19 @@ public class EmployeeWage {
 
             switch (empCheck) {
                 case 1:
-                    emphr = 4;
+                    wkhr = 4;
                     break;
                 case 2:
-                    emphr = 8;
+                    wkhr = 8;
                     break;
                 default:
                     System.out.println("Employee is Absent");
-                    emphr = 0;
+                    wkhr = 0;
             }
-            totalEmpHrs=totalWorkingDays+emphr;
+            totalEmpHrs=totalWorkingDays+wkhr;
 
         }
-        int totalwage=totalEmpHrs*wageperhr;
+        int totalwage=totalEmpHrs*hrlyWage;
         //monthlywage=monthlywage+empwage;
         /*if (empCheck == FULL_TIME)
             System.out.println("Employee is Present");
@@ -48,8 +43,13 @@ public class EmployeeWage {
 
 
     public static void main(String[] args) {
+        int FULL_TIME = 2;
+        int Part_TIME = 1;
+        int emphr=0,empwage=0;
+        final int wageperhr=20;
+        int monthlywage=0;
         EmployeeWage obj= new EmployeeWage();
-        obj.calculateEmployeeWage();
+        obj.calculateEmployeeWage(emphr, wageperhr);
 
 
     }
