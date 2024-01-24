@@ -2,11 +2,10 @@
 
 public class EmployeeWage {
 
-    public void calculateEmployeeWage(int wkhr, int hrlyWage){
+    public void calculateEmployeeWage(int wkhr, int hrlyWage,int monthlyhrs,int totalnoofdays){
         int totalEmpHrs = 0;
-        int hrsinmonth=10;
-        int noofday=20, totalWorkingDays = 0;
-        while (totalEmpHrs <= hrsinmonth && totalWorkingDays < noofday){ ;
+        int totalWorkingDays = 0;
+        while (totalEmpHrs <= monthlyhrs && totalWorkingDays < totalnoofdays){ ;
 
             totalWorkingDays++;
             int empCheck =(int) Math.floor(Math.random() * 10) % 3;
@@ -48,8 +47,10 @@ public class EmployeeWage {
         int emphr=0,empwage=0;
         final int wageperhr=20;
         int monthlywage=0;
+        int hrsinmonth=100;
+        int noofday=20;
         EmployeeWage obj= new EmployeeWage();
-        obj.calculateEmployeeWage(emphr, wageperhr);
+        obj.calculateEmployeeWage(emphr, wageperhr,hrsinmonth,noofday);
 
 
     }
